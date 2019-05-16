@@ -1,10 +1,10 @@
 export default class Eel {
 
-  constructor(gameWidth, gameHeight){
+  constructor(game){
     this.image = document.getElementById("eel");
 
-    this.gameWidth = gameWidth;
-    this.gameHeight = gameHeight;
+    this.gameWidth = game.gameWidth;
+    this.gameHeight = game.gameHeight;
 
     this.width = 120;
     this.height = 50;
@@ -14,7 +14,7 @@ export default class Eel {
 
     this.position = {
       x: this.width / 4,
-      y: gameHeight / 2 - this.height / 2 - 50
+      y: this.gameHeight / 2 - this.height / 2 - 50
     };
   }
 
