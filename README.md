@@ -36,6 +36,7 @@ Day 4:
 * Polish game visuals
 
 Day 5:
+* Finish styling
 * Hosting
 
 BONUS: 
