@@ -20,7 +20,6 @@ Current is a simple, endless 2D scroller game. You play as an eel swimming down 
 Day 1: 
 * Review and research Javascript/Canvas
 * Set up basic skeleton and webpack
-* Create wireframe layout
 
 Day 2:
 * Avatar rendering and control functionality
