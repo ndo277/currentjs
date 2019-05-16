@@ -11,6 +11,8 @@ Current is a simple, endless 2D scroller game. You play as an eel swimming down 
 * After 5 preys eaten, player can press the 'C' key to activate invunerablity. Property will be on a set timer (10 seconds).
 * Player's points is a rolling score count until game over. Bonus points added on top for type of prey eaten.
 
+![Alt text](https://ibb.co/VpYYLp7)
+
 ## Architecture and Technologies
 * Vanilla Javascript for game logic.
 * HTML5 Canvas for rendering.
