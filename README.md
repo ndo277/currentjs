@@ -37,7 +37,7 @@ Day 4:
 
 Day 5:
 * Finish styling
-* Hosting
+* Deployment
 
 BONUS: 
 * Game music and SFX
