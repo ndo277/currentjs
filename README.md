@@ -8,7 +8,7 @@ Current is a simple, endless 2D scroller game. You play as an eel swimming down 
 * Player can move an avatar up and down using the up/down arrow keys.
 * Forward movement simulated by obstacles and objects moving towards/past the player.
 * Avatar collision with prey constitutes eating and collision with predators/obstacles constitutes being eaten/game over.
-* After 5 preys eaten, player can press the 'C' key to activate invunerablity. Property will be on a set timer.
+* After 5 preys eaten, player can press the 'C' key to activate invunerablity. Property will be on a set timer (10 seconds).
 * Player's points is a rolling score count until game over. Bonus points added on top for type of prey eaten.
 
 ## Architecture and Technologies
