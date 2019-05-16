@@ -2,7 +2,7 @@
 
 ## Background and Overview
 
-Current is a simple, endless 2D scroller game. You play as an eel swimming down a current, eating smaller prey and trying to avoid larger predators or obstacles. After eating a certain amount of prey, you will gain the ability to activate your electrical current. This property makes you invunerable to predators for a limited amount of time. Game score increases the longer you survive with bonus points for prey eaten. The game ends when you are eaten by another predator.
+Current is a simple, endless 2D scroller game. You play as an eel swimming down a current, eating smaller prey and trying to avoid larger predators or obstacles. After eating a certain amount of prey, you will gain the ability to activate your electrical current. This property makes you invunerable to predators for a limited amount of time. Game score increases the longer you survive with bonus points for prey eaten. The game ends when you are eaten by another predator or hit by an obstacle.
 
 ## Functionality and MVPs
 * Player can move an avatar up and down using the up/down arrow keys.
@@ -17,4 +17,27 @@ Current is a simple, endless 2D scroller game. You play as an eel swimming down 
 * Webpack to bundle various scripts.
         
 ## Implementation Timeline
-* TBD
+Day 1: 
+* Review and research Javascript/Canvas
+* Set up basic skeleton and webpack
+* Create wireframe layout
+
+Day 2:
+* Avatar rendering and control functionality
+* Obstacle rendering and movement simulation
+
+Day 3:
+* Collision detection
+* Rolling game score
+* Game over logic
+
+Day 4:
+* Eating and invulnerablity logic
+* Polish game visuals
+
+Day 5:
+* Hosting
+
+BONUS: 
+* Game music and SFX
+
