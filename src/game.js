@@ -19,6 +19,7 @@ export default class Game {
     this.gameObjects = [];
     this.eel = new Eel(this);
     this.lives = 1;
+    this.score = 0;
 
     new InputHandler(this.eel, this);
   }
@@ -46,6 +47,10 @@ export default class Game {
   }
 
   update(dt) {
+    if (this.gamestate === GAMESTATE.RUNNING){
+      this.score += 1;
+    }
+
     if (this.lives === 0) this.gamestate = GAMESTATE.GAMEOVER;
 
     if (this.gamestate === GAMESTATE.PAUSED || 
@@ -58,8 +63,15 @@ export default class Game {
   }
 
   draw(ctx) {
+    // SCORE
+    ctx.font = "20px Arial";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "start";
+    ctx.fillText(this.score, 10, 20);
+
     this.gameObjects.forEach(obj => obj.draw(ctx));
 
+    // PAUSE
     if (this.gamestate === GAMESTATE.PAUSED){
       ctx.rect(0, 0, this.gameWidth, this.gameHeight);
       ctx.fillStyle = "rgba(0,0,0,0.5)";
@@ -72,6 +84,8 @@ export default class Game {
 
     }
 
+
+    // START MENU
     if (this.gamestate === GAMESTATE.MENU){
       ctx.rect(0, 0, this.gameWidth, this.gameHeight);
       ctx.fillStyle = "rgba(0,0,0,0.5)";
@@ -84,6 +98,7 @@ export default class Game {
 
     }
 
+    // GAME OVER
     if (this.gamestate === GAMESTATE.GAMEOVER){
       ctx.rect(0, 0, this.gameWidth, this.gameHeight);
       ctx.fillStyle = "rgba(0,0,0,1)";
@@ -92,7 +107,8 @@ export default class Game {
       ctx.font = "20px Arial";
       ctx.fillStyle = "white";
       ctx.textAlign = "center";
-      ctx.fillText("GAME OVER", this.gameWidth / 2, this.gameHeight / 2);
+      ctx.fillText("GAME OVER", this.gameWidth / 2, this.gameHeight / 2 - 20);
+      ctx.fillText(`SCORE ${this.score}`, this.gameWidth / 2, this.gameHeight / 2 + 10);
 
     }
   }
