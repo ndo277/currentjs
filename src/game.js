@@ -14,9 +14,15 @@ export default class Game {
     this.eel = new Eel(this);
     this.prey = new Prey(this);
 
+    let prey = [];
+
+    for(let i = 0; i < 4; i++){
+      prey.push(new Prey(this));
+    }
+
     this.gameObjects = [
       this.eel,
-      this.prey
+      ...prey
     ];
 
     new InputHandler(this.eel);

@@ -10,10 +10,10 @@ export default class Prey {
     
     this.position = {
       x: game.gameWidth, 
-      y: game.gameHeight - 300
+      y: game.gameHeight - Math.random() * game.gameHeight - 100
     };
 
-    this.speed = {x: -2};
+    this.speed = {x: -6.5};
   }
 
   draw(ctx) {
@@ -26,6 +26,11 @@ export default class Prey {
 
   update(dt) {
     this.position.x += this.speed.x;
+
+    if (this.position.x + this.size < 0){
+      this.position.x = this.gameWidth;
+      this.position.y = this.gameHeight - Math.random() * this.gameHeight - 100;
+    }
 
     // collision with eel
     let headOfPrey = {xStart: this.position.x,
@@ -45,7 +50,7 @@ export default class Prey {
         mouthOfEel.yEnd > headOfPrey.yStart) {
       
         this.position.x = this.gameWidth;
-        this.position.y = this.gameHeight - 300;
+        this.position.y = this.gameHeight - Math.random() * this.gameHeight - 100;
 
     }
   }
