@@ -14,7 +14,7 @@ export default class Predator {
       y: game.gameHeight - Math.random() * game.gameHeight - 85
     };
 
-    this.speed = {x: -4};
+    this.speed = {x: -6};
   }
 
   draw(ctx) {
@@ -38,7 +38,8 @@ export default class Predator {
     }
 
     if (detectCollision(this.game.eel, this)) {
-      this.respawn();
+
+      this.game.lives -= 1;
     }
   }
 }

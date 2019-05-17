@@ -18,12 +18,15 @@ export default class Game {
     this.gamestate = GAMESTATE.MENU;
     this.gameObjects = [];
     this.eel = new Eel(this);
+    this.lives = 1;
 
     new InputHandler(this.eel, this);
   }
 
   start() {
-    if (this.gamestate !== GAMESTATE.MENU) return;
+    if (this.gamestate !== GAMESTATE.MENU) {
+          return;
+        }
 
     let prey = [];
     let predators = [];
@@ -43,8 +46,11 @@ export default class Game {
   }
 
   update(dt) {
+    if (this.lives === 0) this.gamestate = GAMESTATE.GAMEOVER;
+
     if (this.gamestate === GAMESTATE.PAUSED || 
-        this.gamestate === GAMESTATE.MENU) {
+        this.gamestate === GAMESTATE.MENU ||
+        this.gamestate === GAMESTATE.GAMEOVER) {
           return;
         }
 
@@ -74,7 +80,19 @@ export default class Game {
       ctx.font = "20px Arial";
       ctx.fillStyle = "white";
       ctx.textAlign = "center";
-      ctx.fillText("Press SPACEBAR to Start", this.gameWidth / 2, this.gameHeight / 2);
+      ctx.fillText("Press SPACEBAR to start game", this.gameWidth / 2, this.gameHeight / 2);
+
+    }
+
+    if (this.gamestate === GAMESTATE.GAMEOVER){
+      ctx.rect(0, 0, this.gameWidth, this.gameHeight);
+      ctx.fillStyle = "rgba(0,0,0,1)";
+      ctx.fill();
+
+      ctx.font = "20px Arial";
+      ctx.fillStyle = "white";
+      ctx.textAlign = "center";
+      ctx.fillText("GAME OVER", this.gameWidth / 2, this.gameHeight / 2);
 
     }
   }
