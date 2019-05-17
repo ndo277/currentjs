@@ -21,7 +21,7 @@ export default class Eel {
   }
 
   activateCurrent(){
-    if (this.game.meter >= 5){
+    if (this.game.meter >= 6){
       this.current = true;
       this.game.meter = 0;
       setTimeout(() => this.current = false, 8000);

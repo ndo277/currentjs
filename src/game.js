@@ -2,6 +2,7 @@ import Eel from './eel';
 import Prey from './prey';
 import Predator from './predator';
 import InputHandler from './input';
+import Battery from './battery';
 
 const GAMESTATE = {
   PAUSED: 0,
@@ -18,6 +19,7 @@ export default class Game {
     this.gamestate = GAMESTATE.MENU;
     this.gameObjects = [];
     this.eel = new Eel(this);
+    this.battery = new Battery(this);
     this.lives = 1;
     this.score = 0;
     this.meter = 0;
@@ -40,6 +42,7 @@ export default class Game {
 
     this.gameObjects = [
       this.eel,
+      this.battery,
       ...prey,
       ...predators
     ];
@@ -72,12 +75,14 @@ export default class Game {
   draw(ctx) {
     this.gameObjects.forEach(obj => obj.draw(ctx));
 
-    // SCORE & METER
+    // SCORE
     ctx.font = "20px Arial";
     ctx.fillStyle = "white";
     ctx.textAlign = "start";
     ctx.fillText(this.score, 10, 20);
-    ctx.fillText(this.meter, 10, 40);
+
+    // CURRENT 
+    // ctx.fillText(this.meter, 10, 40);
     if (this.eel.current) ctx.fillText("CURRENT ON", 10, 60);
     
     // PAUSE
