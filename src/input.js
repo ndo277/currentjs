@@ -19,6 +19,9 @@ export default class InputHandler {
         case 82:
           game.reset();
           break;
+        case 67:
+          eel.activateCurrent();
+          break;
       }
     });
 

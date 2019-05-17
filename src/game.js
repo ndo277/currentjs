@@ -20,6 +20,7 @@ export default class Game {
     this.eel = new Eel(this);
     this.lives = 1;
     this.score = 0;
+    this.meter = 0;
 
     new InputHandler(this.eel, this);
   }
@@ -71,12 +72,13 @@ export default class Game {
   draw(ctx) {
     this.gameObjects.forEach(obj => obj.draw(ctx));
 
-    // SCORE
+    // SCORE & METER
     ctx.font = "20px Arial";
     ctx.fillStyle = "white";
     ctx.textAlign = "start";
     ctx.fillText(this.score, 10, 20);
-
+    ctx.fillText(this.meter, 10, 40);
+    if (this.eel.current) ctx.fillText("CURRENT ON", 10, 60);
     
     // PAUSE
     if (this.gamestate === GAMESTATE.PAUSED){

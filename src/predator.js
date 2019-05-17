@@ -37,8 +37,7 @@ export default class Predator {
       this.respawn();
     }
 
-    if (detectCollision(this.game.eel, this)) {
-
+    if (detectCollision(this.game.eel, this) && !this.game.eel.current) {
       this.game.lives -= 1;
     }
   }

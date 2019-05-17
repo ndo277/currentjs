@@ -3,11 +3,13 @@ export default class Eel {
   constructor(game){
     this.image = document.getElementById("eel");
 
+    this.game = game;
     this.gameWidth = game.gameWidth;
     this.gameHeight = game.gameHeight;
 
     this.width = 120;
     this.height = 40;
+    this.current = false;
 
     this.maxSpeed = 10;
     this.speed = 0;
@@ -16,6 +18,14 @@ export default class Eel {
       x: this.width / 4,
       y: this.gameHeight / 2 - this.height / 2 - 50
     };
+  }
+
+  activateCurrent(){
+    if (this.game.meter >= 5){
+      this.current = true;
+      this.game.meter = 0;
+      setTimeout(() => this.current = false, 8000);
+    }
   }
 
   moveUp() {
