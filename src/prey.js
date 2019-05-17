@@ -9,8 +9,8 @@ export default class Prey {
     this.game = game;
     
     this.position = {
-      x: game.gameWidth, 
-      y: game.gameHeight - Math.random() * game.gameHeight - 100
+      x: game.gameWidth + Math.random() * 200, 
+      y: game.gameHeight - Math.random() * game.gameHeight - 85
     };
 
     this.speed = {x: -6.5};
@@ -29,7 +29,7 @@ export default class Prey {
 
     if (this.position.x + this.size < 0){
       this.position.x = this.gameWidth;
-      this.position.y = this.gameHeight - Math.random() * this.gameHeight - 100;
+      this.position.y = this.gameHeight - Math.random() * this.gameHeight - 85;
     }
 
     // collision with eel
@@ -50,7 +50,7 @@ export default class Prey {
         mouthOfEel.yEnd > headOfPrey.yStart) {
       
         this.position.x = this.gameWidth;
-        this.position.y = this.gameHeight - Math.random() * this.gameHeight - 100;
+        this.position.y = this.gameHeight - Math.random() * this.gameHeight - 85;
 
     }
   }
