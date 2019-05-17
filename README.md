@@ -1,5 +1,7 @@
 # Current
 
+[Play Demo](https://ndo277.github.io/current/)
+
 ## Background and Overview
 
 Current is a simple, endless 2D scroller game. You play as an eel swimming down a current, eating smaller prey and trying to avoid larger predators or obstacles. After eating a certain amount of prey, you will gain the ability to activate your electrical current. This property makes you invunerable to predators for a limited amount of time. Game score increases the longer you survive with bonus points for prey eaten. The game ends when you are eaten by another predator or hit by an obstacle.
