@@ -39,6 +39,7 @@ export default class Prey {
     }
 
     if (detectCollision(this.game.eel, this)){
+      this.game.score += 250;
       this.respawn();
     }
   }
