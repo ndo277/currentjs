@@ -1,5 +1,5 @@
 export default class InputHandler {
-  constructor(eel){
+  constructor(eel, game){
 
     document.addEventListener("keydown", (event) => {
 
@@ -9,6 +9,12 @@ export default class InputHandler {
           break;
         case 40:
           eel.moveDown();
+          break;
+        case 80:
+          game.togglePause();
+          break; 
+        case 32:
+          game.start();
           break;
       }
     });
