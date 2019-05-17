@@ -82,7 +82,6 @@ export default class Game {
     ctx.fillText(this.score, 10, 20);
 
     // CURRENT 
-    // ctx.fillText(this.meter, 10, 40);
     if (this.eel.current) ctx.fillText("CURRENT ON", 10, 60);
     
     // PAUSE

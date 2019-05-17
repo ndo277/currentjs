@@ -9,34 +9,35 @@ export default class Battery {
     this.image6 = document.getElementById("battery-6");
 
     this.game = game;
+    this.size = 100;
   }
 
   draw(ctx){
     console.log(`meter: ${this.game.meter}`);
-    
-    if (this.game.meter > 6) ctx.drawImage(this.image6, 10, 40, 100, 100);
+
+    if (this.game.meter > 6) ctx.drawImage(this.image6, -15, -10, this.size, this.size);
 
       switch (this.game.meter) {
       case 0:
-        ctx.drawImage(this.image0, 10, 40, 100, 100);
+        ctx.drawImage(this.image0, -15, -10, this.size, this.size);
         break;
       case 1:
-        ctx.drawImage(this.image1, 10, 40, 100, 100);
+        ctx.drawImage(this.image1, -15, -10, this.size, this.size);
         break;
       case 2:
-        ctx.drawImage(this.image2, 10, 40, 100, 100);
+        ctx.drawImage(this.image2, -15, -10, this.size, this.size);
         break;
       case 3:
-        ctx.drawImage(this.image3, 10, 40, 100, 100);
+        ctx.drawImage(this.image3, -15, -10, this.size, this.size);
         break;
       case 4:
-        ctx.drawImage(this.image4, 10, 40, 100, 100);
+        ctx.drawImage(this.image4, -15, -10, this.size, this.size);
         break;
       case 5:
-        ctx.drawImage(this.image5, 10, 40, 100, 100);
+        ctx.drawImage(this.image5, -15, -10, this.size, this.size);
         break;
       case 6:
-        ctx.drawImage(this.image6, 10, 40, 100, 100);
+        ctx.drawImage(this.image6, -15, -10, this.size, this.size);
         break;
     }
     
