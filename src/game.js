@@ -80,9 +80,6 @@ export default class Game {
     ctx.fillStyle = "white";
     ctx.textAlign = "start";
     ctx.fillText(this.score, 10, 20);
-
-    // CURRENT 
-    if (this.eel.current) ctx.fillText("CURRENT ON", 10, 60);
     
     // PAUSE
     if (this.gamestate === GAMESTATE.PAUSED){

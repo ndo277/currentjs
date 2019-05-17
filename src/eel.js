@@ -1,7 +1,8 @@
 export default class Eel {
 
   constructor(game){
-    this.image = document.getElementById("eel");
+    this.image1 = document.getElementById("eel");
+    this.image2 = document.getElementById("eel-super");
 
     this.game = game;
     this.gameWidth = game.gameWidth;
@@ -42,7 +43,11 @@ export default class Eel {
 
 
   draw(ctx) {
-    ctx.drawImage(this.image, this.position.x, this.position.y);
+    if (!this.current) {
+      ctx.drawImage(this.image1, this.position.x, this.position.y);
+    } else {
+      ctx.drawImage(this.image2, this.position.x, this.position.y);
+    }
   }
 
   update(dt) {
