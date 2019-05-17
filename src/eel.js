@@ -40,6 +40,8 @@ export default class Eel {
     this.position.y += this.speed;
 
     if (this.position.y < -30) this.position.y = -30;
-    if (this.position.y + this.height + 50 > this.gameHeight) this.position.y = this.gameHeight - this.height - 50;
+    if (this.position.y + this.height + 50 > this.gameHeight){ 
+      this.position.y = this.gameHeight - this.height - 50;
+    }
   }
 }
