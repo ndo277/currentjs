@@ -16,6 +16,9 @@ export default class InputHandler {
         case 32:
           game.start();
           break;
+        case 82:
+          game.reset();
+          break;
       }
     });
 

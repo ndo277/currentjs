@@ -46,6 +46,12 @@ export default class Game {
     this.gamestate = GAMESTATE.RUNNING;
   }
 
+  reset() {
+    if (this.gamestate === GAMESTATE.GAMEOVER){
+      location.reload();
+    }
+  }
+
   update(dt) {
     if (this.gamestate === GAMESTATE.RUNNING){
       this.score += 1;
@@ -109,6 +115,8 @@ export default class Game {
       ctx.textAlign = "center";
       ctx.fillText("GAME OVER", this.gameWidth / 2, this.gameHeight / 2 - 20);
       ctx.fillText(`SCORE ${this.score}`, this.gameWidth / 2, this.gameHeight / 2 + 10);
+      ctx.textAlign = "start";
+      ctx.fillText("Press R to reset", 10, 20);
 
     }
   }
