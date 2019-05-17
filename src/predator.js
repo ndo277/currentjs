@@ -10,11 +10,11 @@ export default class Predator {
     this.game = game;
 
     this.position = {
-      x: game.gameWidth + Math.random() * 200,
+      x: game.gameWidth + Math.random() * 300,
       y: game.gameHeight - Math.random() * game.gameHeight - 85
     };
 
-    this.speed = {x: -6};
+    this.speed = {x: -7};
   }
 
   draw(ctx) {
@@ -26,7 +26,7 @@ export default class Predator {
   }
 
   respawn() {
-    this.position.x = this.gameWidth + Math.random() * 200;
+    this.position.x = this.gameWidth + Math.random() * 300;
     this.position.y = this.gameHeight - Math.random() * this.gameHeight - 85;
   }
 
