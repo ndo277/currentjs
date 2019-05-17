@@ -1,5 +1,3 @@
-import Eel from "./eel";
-
 export default class InputHandler {
   constructor(eel){
 

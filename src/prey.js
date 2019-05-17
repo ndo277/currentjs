@@ -1,3 +1,5 @@
+import {detectCollision} from './collision';
+
 export default class Prey {
 
   constructor(game) {
@@ -24,34 +26,20 @@ export default class Prey {
                   this.size);
   }
 
+  respawn() {
+    this.position.x = this.gameWidth + Math.random() * 200;
+    this.position.y = this.gameHeight - Math.random() * this.gameHeight - 85;
+  }
+
   update(dt) {
     this.position.x += this.speed.x;
 
     if (this.position.x + this.size < 0){
-      this.position.x = this.gameWidth;
-      this.position.y = this.gameHeight - Math.random() * this.gameHeight - 85;
+      this.respawn();
     }
 
-    // collision with eel
-    let headOfPrey = {xStart: this.position.x,
-                      xEnd: this.position.x + this.size,
-                      yStart: this.position.y,
-                      yEnd: this.position.y + this.size
-                     };
-    let mouthOfEel = {xStart: this.game.eel.position.x + 80,
-                      xEnd: this.game.eel.position.x + this.game.eel.width - 50, 
-                      yStart: this.game.eel.position.y + 80,
-                      yEnd: this.game.eel.position.y + this.game.eel.height
-                     };
-
-    if (mouthOfEel.xStart < headOfPrey.xEnd &&
-        mouthOfEel.xEnd > headOfPrey.xStart &&
-        mouthOfEel.yStart < headOfPrey.yEnd &&
-        mouthOfEel.yEnd > headOfPrey.yStart) {
-      
-        this.position.x = this.gameWidth;
-        this.position.y = this.gameHeight - Math.random() * this.gameHeight - 85;
-
+    if (detectCollision(this.game.eel, this)){
+      this.respawn();
     }
   }
 }
