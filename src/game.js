@@ -23,11 +23,14 @@ export default class Game {
     this.lives = 1;
     this.score = 0;
     this.meter = 0;
+    this.music = document.getElementById("music")
 
     new InputHandler(this.eel, this);
   }
 
   start() {
+    this.music.play();
+
     if (this.gamestate !== GAMESTATE.MENU) {
           return;
         }
@@ -110,6 +113,7 @@ export default class Game {
 
     // GAME OVER
     if (this.gamestate === GAMESTATE.GAMEOVER){
+      this.music.pause();
       ctx.rect(0, 0, this.gameWidth, this.gameHeight);
       ctx.fillStyle = "rgba(0,0,0,1)";
       ctx.fill();

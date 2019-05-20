@@ -13,8 +13,6 @@ export default class Battery {
   }
 
   draw(ctx){
-    console.log(`meter: ${this.game.meter}`);
-
     if (this.game.meter > 6) ctx.drawImage(this.image6, -15, -10, this.size, this.size);
 
       switch (this.game.meter) {
