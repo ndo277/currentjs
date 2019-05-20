@@ -23,7 +23,7 @@ export default class Game {
     this.lives = 1;
     this.score = 0;
     this.meter = 0;
-    this.music = document.getElementById("music")
+    this.music = document.getElementById("music");
 
     new InputHandler(this.eel, this);
   }

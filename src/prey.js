@@ -40,6 +40,7 @@ export default class Prey {
 
     if (detectCollision(this.game.eel, this)){
       this.game.score += 250;
+      document.getElementById("shock").play();
       this.respawn();
 
       if (!this.game.eel.current){

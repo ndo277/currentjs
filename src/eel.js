@@ -24,6 +24,7 @@ export default class Eel {
   activateCurrent(){
     if (this.game.meter >= 6){
       this.current = true;
+      document.getElementById("current").play();
       this.game.meter = 0;
       setTimeout(() => this.current = false, 8000);
     }
