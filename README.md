@@ -1,6 +1,6 @@
 # Current.js
 
-[Live Link](https://ndo277.github.io/current/)
+[Live Link](https://ndo277.github.io/currentjs/)
 
 ## Background and Overview
 
