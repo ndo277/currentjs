@@ -23,10 +23,21 @@ export default class Eel {
 
   activateCurrent(){
     if (this.game.meter >= 6){
-      this.current = true;
       document.getElementById("current").play();
-      this.game.meter = 0;
-      setTimeout(() => this.current = false, 8000);
+      this.current = true;
+
+      setTimeout(() => this.game.meter = 6, 1000);
+      
+      let decMeter = setInterval(() => {
+        this.game.meter -= 1;
+
+        if (this.game.meter === 0) {
+          clearInterval(decMeter);
+          this.current = false;
+        }
+      }, 1000);
+
+
     }
   }
 
