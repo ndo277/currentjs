@@ -14,7 +14,7 @@ export default class Predator {
       y: game.gameHeight - Math.random() * game.gameHeight - 85
     };
 
-    this.speed = {x: -7};
+    this.speed = {x: -3};
   }
 
   draw(ctx) {
@@ -25,6 +25,10 @@ export default class Predator {
                   this.size);
   }
 
+  speedUp(){
+    this.speed.x -= 0.5;
+  }
+
   respawn() {
     this.position.x = this.gameWidth + Math.random() * 300;
     this.position.y = this.gameHeight - Math.random() * this.gameHeight - 85;
@@ -33,6 +37,10 @@ export default class Predator {
   update(dt) {
     this.position.x += this.speed.x;
 
+    if (this.game.score % 500 === 0) {
+      this.speedUp();
+    }
+    
     if (this.position.x + this.size < 0) {
       this.respawn();
     }

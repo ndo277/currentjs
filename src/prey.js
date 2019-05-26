@@ -15,7 +15,7 @@ export default class Prey {
       y: game.gameHeight - Math.random() * game.gameHeight - 85
     };
 
-    this.speed = {x: -8};
+    this.speed = {x: -2};
   }
 
   draw(ctx) {
@@ -26,6 +26,10 @@ export default class Prey {
                   this.size);
   }
 
+  speedUp(){
+    this.speed.x -= 0.5;
+  }
+
   respawn() {
     this.position.x = this.gameWidth + Math.random() * 200;
     this.position.y = this.gameHeight - Math.random() * this.gameHeight - 85;
@@ -33,6 +37,10 @@ export default class Prey {
 
   update(dt) {
     this.position.x += this.speed.x;
+
+    if (this.game.score % 500 === 0) {
+      this.speedUp();
+    }
 
     if (this.position.x + this.size < 0){
       this.respawn();
