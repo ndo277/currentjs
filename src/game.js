@@ -107,7 +107,11 @@ export default class Game {
       ctx.font = "20px Arial";
       ctx.fillStyle = "white";
       ctx.textAlign = "center";
-      ctx.fillText("Press SPACEBAR to start game", this.gameWidth / 2, this.gameHeight / 2);
+      ctx.fillText("Eat smaller prey and avoid larger predators!", this.gameWidth / 2, this.gameHeight / 2 - 75);
+      ctx.fillText("Use UP and DOWN keys to move", this.gameWidth / 2, this.gameHeight / 2 - 35);
+      ctx.fillText("Press C to activate your electric current when fully charged!", this.gameWidth / 2, this.gameHeight / 2);
+      ctx.fillText("Press P to pause game", this.gameWidth / 2, this.gameHeight / 2 + 35);
+      ctx.fillText("Press SPACEBAR to start game", this.gameWidth / 2, this.gameHeight / 2 + 75);
 
     }
 
