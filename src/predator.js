@@ -23,6 +23,7 @@ export default class Predator {
                   this.position.y,
                   this.size,
                   this.size);
+                
   }
 
   speedUp(){
