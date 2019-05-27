@@ -27,7 +27,7 @@ export default class Predator {
   }
 
   speedUp(){
-    this.speed.x -= 0.5;
+    this.speed.x -= 0.1;
   }
 
   respawn() {
@@ -38,7 +38,7 @@ export default class Predator {
   update(dt) {
     this.position.x += this.speed.x;
 
-    if (this.game.score % 500 === 0) {
+    if (this.game.score % 100 === 0) {
       this.speedUp();
     }
     

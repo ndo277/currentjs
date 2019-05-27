@@ -35,9 +35,8 @@ export default class Eel {
           clearInterval(decMeter);
           this.current = false;
         }
+        
       }, 1000);
-
-
     }
   }
 
