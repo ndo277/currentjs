@@ -37,4 +37,4 @@ activateCurrent(){
   }
 ```
 
-After player activates current, a setTimeout function is used to set the meter to a fixed amount after 1 second. Since the meter could incease in size unboundedly, before starting the charging down phase, the meter needs to be set to a fixed amount. During the charging down phase, a setInterval function is used to gradually decrement the meter every second, until the meter reaches 0 and the interval is cleared. 
+After player activates current, a setTimeout function is used to set the meter to a fixed amount after 1 second. Since the meter could incease in size unboundedly, before starting the charging down phase, the meter needs to be set to a fixed amount. During the charging down phase, a setInterval function is used to gradually decrement the meter every second, while also updating the battery visual, until the meter reaches 0 and the interval is cleared. 
