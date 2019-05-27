@@ -12,6 +12,37 @@ Current.js is built with vanilla JavaScript to handle processing of game logic, 
         
 ## Code Highlights
 
+The game detects collision of moving objects using the axis-aligned bounding box algorithm. The logic is handled inside the detectCollision function:
+
+```javascript
+// src/collision.js
+
+export function detectCollision (eel, fish) {
+  let fishDimensions = {
+    xStart: fish.position.x,
+    xEnd: fish.position.x + fish.size,
+    yStart: fish.position.y,
+    yEnd: fish.position.y + fish.size
+  };
+  let mouthOfEel = {
+    xStart: eel.position.x + 80,
+    xEnd: eel.position.x + eel.width - 50,
+    yStart: eel.position.y + 80,
+    yEnd: eel.position.y + eel.height
+  };
+
+  if (mouthOfEel.xStart < fishDimensions.xEnd &&
+    mouthOfEel.xEnd > fishDimensions.xStart &&
+    mouthOfEel.yStart < fishDimensions.yEnd &&
+    mouthOfEel.yEnd > fishDimensions.yStart){
+      return true;
+    } else {
+      return false;
+    }
+}
+```
+The dimensions of each relevant object are defined as start and end points on the x and y axes. These four points shape the hitboxes of the objects as rectangles. The algorithm checks for overlaps of these rectangles to ensure that objects have indeed collided based on the predefined hitboxes.
+
 To convey the sense of the eel gradually charging down as it releases electricity, an in-game battery icon is tied to the internal decrement of a "meter" property. The logic is stored inside the function that handles initial activation of the current property: 
 
 ```javascript
