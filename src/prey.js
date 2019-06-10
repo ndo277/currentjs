@@ -15,7 +15,7 @@ export default class Prey {
       y: game.gameHeight - Math.random() * game.gameHeight - 85
     };
 
-    this.speed = {x: -2};
+    this.speed = {x: -1};
   }
 
   draw(ctx) {

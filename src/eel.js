@@ -9,7 +9,7 @@ export default class Eel {
     this.gameHeight = game.gameHeight;
 
     this.width = 120;
-    this.height = 40;
+    this.height = 35;
     this.current = false;
 
     this.maxSpeed = 10;

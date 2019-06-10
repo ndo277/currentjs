@@ -14,7 +14,7 @@ export default class Predator {
       y: game.gameHeight - Math.random() * game.gameHeight - 85
     };
 
-    this.speed = {x: -3};
+    this.speed = {x: -2};
   }
 
   draw(ctx) {
